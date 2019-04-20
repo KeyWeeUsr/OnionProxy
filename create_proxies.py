@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 from base64 import b64decode
 
 
@@ -28,9 +29,10 @@ COMPOSE_NAME = 'docker-compose.yml'
 IMAGE_NAME = f'keyweeusr/{RAW_NAME}'
 
 
-def main():
+def main(sources: list = None):
     print(b64decode(DOCKERFILE.encode('utf-8')).decode('utf-8'))
+    print(sources)
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1:])
