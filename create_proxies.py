@@ -22,4 +22,15 @@ IHJlcGxhY2UgcGxhY2Vob2xkZXIgd2l0aCB2YWx1ZSBmb3IgcHJveHlfcGFzcwpBUkcgU0VSVklD
 RV9OQU1FClJVTiBzZWQgLWkgInN8T05JT05QUk9YWV9VUkx8JHtTRVJWSUNFX05BTUV9fGciICRP
 UC9uZ2lueC5jb25mICYmIFwKICAgIGNhdCAkT1AvbmdpbnguY29uZgo=
 """
-print(b64decode(DOCKERFILE.encode('utf-8')).decode('utf-8'))
+RAW_NAME = 'onionproxy'
+VERSION = environ.get('VERSION', '1.0')
+COMPOSE_NAME = 'docker-compose.yml'
+IMAGE_NAME = f'keyweeusr/{RAW_NAME}'
+
+
+def main():
+    print(b64decode(DOCKERFILE.encode('utf-8')).decode('utf-8'))
+
+
+if __name__ == '__main__':
+    main()
