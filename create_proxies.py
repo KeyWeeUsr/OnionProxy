@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import sys
+from os import environ
+from os.path import join, exists
 from base64 import b64decode
 
 
@@ -30,8 +32,16 @@ IMAGE_NAME = f'keyweeusr/{RAW_NAME}'
 
 
 def main(sources: list = None):
-    print(b64decode(DOCKERFILE.encode('utf-8')).decode('utf-8'))
-    print(sources)
+    if not sources:
+        print('No list of sources found. Input proxy files!')
+        exit(1)
+
+    if not exists(join(environ['PWD'], 'proxies.txt')):
+        print("The 'proxies.txt' was not found!")
+        exit(1)
+
+    with open(join(environ['PWD'], 'Dockerfile'), 'wb') as dfl:
+        dfl.write(b64decode(DOCKERFILE.encode('utf-8')))
 
 
 if __name__ == '__main__':
