@@ -1,0 +1,8 @@
+docker-compose.yml
+
+# Emacs saves
+*~
+
+# Emacs edits
+*#*
+*.#*
