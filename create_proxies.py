@@ -55,9 +55,12 @@ def main(sources: list = None):
             source = source.readlines()
 
         for line in source:
-            name, *url = line.split(';')
+            name, conf, *url = line.split(';')
             url = ';'.join(url)
-            conf = 'nginx-default.conf'
+            if not conf:
+                conf = 'nginx-default.conf'
+            elif conf == f'{RAW_NAME.upper()}':
+                conf = join('confs', f'nginx-{name}.conf')
 
             services += f'    {name}:\n'
             services += f'        build:\n'

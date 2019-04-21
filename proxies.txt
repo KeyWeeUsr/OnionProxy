@@ -1,1 +1,3 @@
-httpbin;http://httpbin.org
+wikipedia;;https://wikipedia.org
+duckduckgo;ONIONPROXY;https://duckduckgo.com
+httpbin;;http://httpbin.org
