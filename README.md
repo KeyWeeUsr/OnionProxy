@@ -14,7 +14,7 @@ not being compatible with the privacy solution? Let's use Tor as an example.
 Imagine you want to access one of [these websites](
 https://trac.torproject.org/projects/tor/wiki/org/doc/ListOfServicesBlockingTor
 )([onion link](
-ea5faa5po25cf7fb.onion/projects/tor/wiki/org/doc/ListOfServicesBlockingTor
+http://ea5faa5po25cf7fb.onion/projects/tor/wiki/org/doc/ListOfServicesBlockingTor
 )). Well, you can't. You'll either need to visit the page without Tor, or
 sacrifice some of "your" privacy to stay hidden.
 
@@ -54,8 +54,8 @@ say Wikipedia
     ...
 
 proxying would mean creating a proxy for each of the domains and redirect all
-of the locations to the appropriate sub-locations (and rewrite response bodies
-+ rewrite Host, Location and perhaps other headers to make it load properly)
+of the locations to the appropriate sub-locations (and rewrite response bodies,
+rewrite Host, Location and perhaps other headers to make it load properly)
 or even own onion services. Solutions such as this cause more work than they
 are useful, therefore depending on the use-case it might be more comfortable to
 just run an exit node. For such case though you allow everyone to access your
